@@ -1,0 +1,121 @@
+.hd {
+  position: fixed;
+  inset: 0 0 auto;
+  z-index: 50;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem var(--pad);
+  color: var(--ivory);
+  transition:
+    background 0.4s,
+    color 0.4s,
+    padding 0.4s;
+}
+.hd.solid {
+  background: rgba(246, 239, 228, 0.93);
+  backdrop-filter: blur(10px);
+  color: var(--espresso);
+  padding-block: 0.6rem;
+  box-shadow: 0 1px 0 rgba(42, 29, 23, 0.1);
+}
+.hd.open {
+  background: transparent;
+  backdrop-filter: none;
+  box-shadow: none;
+  color: var(--ivory);
+}
+.logo {
+  position: relative;
+  z-index: 2;
+  font: 500 2rem/1 var(--serif);
+  letter-spacing: 0.18em;
+  text-decoration: none;
+}
+.burger {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  place-content: center;
+  gap: 7px;
+  width: 3rem;
+  height: 3rem;
+}
+.burger span {
+  display: block;
+  width: 26px;
+  height: 1.5px;
+  background: currentColor;
+  transition: transform 0.4s var(--ease);
+}
+.hd.open .burger span:first-child {
+  transform: translateY(4.25px) rotate(45deg);
+}
+.hd.open .burger span:last-child {
+  transform: translateY(-4.25px) rotate(-45deg);
+}
+.hd nav {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.2rem;
+  background: var(--espresso);
+  clip-path: inset(0 0 100% 0);
+  visibility: hidden;
+  transition:
+    clip-path 0.7s var(--ease),
+    visibility 0.7s;
+}
+.hd nav.open {
+  clip-path: inset(0);
+  visibility: visible;
+}
+.hd nav a {
+  position: relative;
+  padding: 0.2rem 0;
+  font: 500 2.6rem/1.1 var(--serif);
+  text-decoration: none;
+  color: var(--ivory);
+}
+.hd nav a::after {
+  content: "";
+  position: absolute;
+  inset: auto 0 0;
+  height: 1px;
+  background: var(--gold);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.5s var(--ease);
+}
+.hd nav a:hover::after,
+.hd nav a.on::after {
+  transform: scaleX(1);
+}
+@media (min-width: 56rem) {
+  .burger {
+    display: none;
+  }
+  .hd nav {
+    position: static;
+    flex-direction: row;
+    gap: 2.2rem;
+    background: none;
+    clip-path: none;
+    visibility: visible;
+  }
+  .hd nav a {
+    font: 400 1rem var(--sans);
+    letter-spacing: 0.06em;
+    color: inherit;
+  }
+  .hd nav a:last-child {
+    padding: 0.55rem 1.4rem;
+    border: 1px solid currentColor;
+  }
+  .hd nav a:last-child::after {
+    display: none;
+  }
+}

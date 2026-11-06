@@ -1,0 +1,117 @@
+.menu {
+  max-width: 84rem;
+  margin: auto;
+}
+.tabs {
+  display: flex;
+  gap: clamp(1.2rem, 4vw, 3rem);
+  margin-bottom: 1.5rem;
+  border-bottom: 1px solid rgba(42, 29, 23, 0.18);
+}
+.tabs button {
+  position: relative;
+  padding: 0.8rem 0.1rem;
+  font: 500 1.7rem var(--serif);
+  opacity: 0.6;
+  transition: opacity 0.3s;
+}
+.tabs button::after {
+  content: "";
+  position: absolute;
+  inset: auto 0 -1px;
+  height: 2px;
+  background: var(--terra);
+  transform: scaleX(0);
+  transition: transform 0.5s var(--ease);
+}
+.tabs .on {
+  opacity: 1;
+}
+.tabs .on::after {
+  transform: scaleX(1);
+}
+.diets {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-bottom: 2.5rem;
+}
+.diets button {
+  min-height: 2.75rem;
+  padding: 0 1.1rem;
+  border: 1px solid rgba(42, 29, 23, 0.35);
+  border-radius: 2rem;
+  font-size: 0.95rem;
+  transition:
+    background 0.3s,
+    color 0.3s,
+    border-color 0.3s;
+}
+.diets button[aria-pressed="true"] {
+  background: var(--olive);
+  border-color: var(--olive);
+  color: var(--ivory);
+}
+.dishes {
+  display: grid;
+  gap: 2.4rem 1.8rem;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 18rem), 1fr));
+  animation: menuFade 0.7s var(--ease);
+}
+@keyframes menuFade {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+}
+.dish {
+  display: grid;
+  gap: 0.6rem;
+  align-content: start;
+  text-align: left;
+}
+.dish .photo {
+  aspect-ratio: 4/3;
+  border-radius: 0.4rem 5rem 0.4rem 0.4rem;
+}
+.dish:hover .photo img {
+  transform: scale(1.07);
+}
+.dish-top {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+}
+.dish-name {
+  font: 500 1.6rem/1.15 var(--serif);
+}
+.dish-desc {
+  font-size: 1rem;
+  opacity: 0.85;
+}
+.dish-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  font-size: 0.85rem;
+}
+.dish-tags b,
+.dish-tags em {
+  padding: 0.1rem 0.6rem;
+  border: 1px solid var(--olive);
+  border-radius: 1rem;
+  font-style: normal;
+  font-weight: 500;
+  color: var(--olive);
+}
+.dish-tags em {
+  background: var(--terra);
+  border-color: var(--terra);
+  color: var(--ivory);
+}
+.note,
+.none {
+  margin-top: 2.5rem;
+  font-size: 0.95rem;
+  opacity: 0.8;
+}

@@ -1,0 +1,34 @@
+.ft {
+  padding: 4rem var(--pad) 2rem;
+  background: var(--sand);
+}
+.ft-grid {
+  display: grid;
+  gap: 2.5rem;
+  max-width: 80rem;
+  margin: 2rem 0;
+}
+.ft h3 {
+  margin-bottom: 0.6rem;
+  font-size: 1.7rem;
+}
+.ft dl > div {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.2rem 0.8rem;
+}
+.ft dt {
+  opacity: 0.75;
+}
+.ft a {
+  text-underline-offset: 0.25em;
+}
+.ft-fine {
+  font-size: 0.95rem;
+  opacity: 0.8;
+}
+@media (min-width: 56rem) {
+  .ft-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}

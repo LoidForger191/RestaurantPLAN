@@ -1,0 +1,27 @@
+.tst {
+  background: var(--olive);
+  color: var(--ivory);
+}
+.tst-grid {
+  display: grid;
+  gap: 3rem;
+  max-width: 80rem;
+  margin: auto;
+}
+.tst blockquote {
+  font: italic 400 clamp(1.5rem, 3.6vw, 2rem)/1.35 var(--serif);
+}
+.tst figcaption {
+  margin-top: 1rem;
+  font-size: 1rem;
+}
+.tst figcaption span {
+  display: block;
+  opacity: 0.8;
+}
+@media (min-width: 56rem) {
+  .tst-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 4rem;
+  }
+}

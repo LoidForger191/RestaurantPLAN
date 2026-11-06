@@ -1,0 +1,124 @@
+.res {
+  --line: rgba(246, 239, 228, 0.35);
+  background: var(--espresso);
+  color: var(--ivory);
+}
+.res h2 {
+  margin-bottom: 0.4rem;
+}
+.res .brush {
+  margin-bottom: 3rem;
+  font-size: 2.2rem;
+  color: var(--champ);
+}
+.res-form {
+  display: grid;
+  gap: 2.5rem;
+  max-width: 70rem;
+  margin: auto;
+}
+.res fieldset {
+  min-width: 0;
+  padding: 0;
+  border: 0;
+}
+.res legend {
+  margin-bottom: 1rem;
+  font: 500 1.6rem var(--serif);
+  color: var(--champ);
+}
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+.chips button {
+  min-width: 3rem;
+  min-height: 3rem;
+  padding: 0 0.9rem;
+  border: 1px solid var(--line);
+  transition:
+    background 0.3s,
+    color 0.3s,
+    border-color 0.3s;
+}
+.chips button:hover:not(:disabled) {
+  border-color: var(--gold);
+}
+.chips [aria-pressed="true"] {
+  background: var(--gold);
+  border-color: var(--gold);
+  color: var(--espresso);
+}
+.chips :disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+.fld {
+  display: grid;
+  gap: 0.4rem;
+  margin-bottom: 1.2rem;
+  font-size: 0.95rem;
+}
+.fld input {
+  min-height: 3rem;
+  padding: 0 0.8rem;
+  border: 0;
+  border-bottom: 1px solid rgba(246, 239, 228, 0.55);
+  background: rgba(246, 239, 228, 0.07);
+  font: 400 1rem var(--sans);
+  color: inherit;
+}
+.fld input:focus {
+  outline: 0;
+  border-color: var(--gold);
+  background: rgba(246, 239, 228, 0.13);
+}
+.fld input[aria-invalid="true"] {
+  border-color: #ff9d85;
+}
+.res small,
+.fail {
+  display: block;
+  margin-top: 0.5rem;
+  font-size: 0.95rem;
+  color: #ff9d85;
+}
+.hint {
+  margin-top: 0.8rem;
+  font-size: 0.95rem;
+  opacity: 0.75;
+}
+.res .btn-solid {
+  width: 100%;
+  background: var(--gold);
+  border-color: var(--gold);
+  color: var(--espresso);
+}
+.res .btn-solid:hover {
+  background: var(--ivory);
+  border-color: var(--ivory);
+}
+.res .btn-solid:disabled {
+  opacity: 0.6;
+  cursor: wait;
+}
+.done {
+  display: grid;
+  gap: 1.2rem;
+  justify-items: start;
+  max-width: 36rem;
+}
+.done h3 {
+  font-size: 2.8rem;
+}
+@media (min-width: 62rem) {
+  .res-form {
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem 5rem;
+  }
+  .res-form fieldset:last-child {
+    grid-column: 2;
+    grid-row: 1 / span 3;
+  }
+}
