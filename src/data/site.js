@@ -2,7 +2,7 @@ export const site = {
   name: "Knightingale",
   phone: "+351 210 000 000",
   whatsapp: "351210000000",
-  email: "reservations@olea.example",
+  email: "reservations@knightingale.example",
   address: "12 Rua do Azeite, Lisbon",
   hours: [
     ["Tuesday to Thursday", "18:00 – 23:00"],
