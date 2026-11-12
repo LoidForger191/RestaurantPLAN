@@ -1,7 +1,7 @@
 export const site = {
   name: "Knightingale",
   phone: "+91 8939177139",
-  whatsapp: "351210000000",
+  whatsapp: "8939177139",
   email: "loidforger191@proton.me",
   address: "12 Rua do Azeite, Lisbon",
   hours: [
